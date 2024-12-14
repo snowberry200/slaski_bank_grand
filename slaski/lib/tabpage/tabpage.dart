@@ -5,14 +5,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:slaski/presentation/homepage/bodySizedBox.dart';
-import 'package:slaski/presentation/homepage/bottomSheet.dart';
-import 'package:slaski/presentation/homepage/sliverAppbar.dart';
+import 'package:slaski/presentation/homepage/bottomsheet.dart';
+import 'package:slaski/presentation/homepage/sliverappbar.dart';
 
 // import 'backgroundimage.dart';
 // import '../../LayOut/LayOut.dart';
 import '../presentation/widget/backgroundimage.dart';
 import '../layout/layout.dart';
-
 
 class TabPage extends StatefulWidget {
   const TabPage({super.key});
@@ -21,7 +20,6 @@ class TabPage extends StatefulWidget {
 }
 
 class _TabPageState extends State<TabPage> with TickerProviderStateMixin {
-  
   final BorderRadiusGeometry borderradius = BorderRadius.circular(8);
   late TabController tabBarController;
   late AnimationController _animationController;
@@ -158,18 +156,14 @@ class _TabPageState extends State<TabPage> with TickerProviderStateMixin {
           body: Padding(
               padding: Layout.isMobile(context)
                   ? const EdgeInsets.only(top: 20, bottom: 5, left: 0, right: 0)
-                  : const EdgeInsets.only(
-                      top: 0, bottom: 0, left: 0, right: 0),
+                  : const EdgeInsets.only(top: 0, bottom: 0, left: 0, right: 0),
               child: Center(
                 child: Layout.isDesktop(context)
-                    ?
-                    SliverAppBarForDesktop()
+                    ? SliverAppBarForDesktop()
                     : BodySizedBox(),
 
                 // )
               ))),
     );
   }
-
-  
 }

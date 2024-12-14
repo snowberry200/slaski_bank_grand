@@ -4,7 +4,7 @@ import 'dart:typed_data';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:slaski/presentation/homepage/bodySizedBox.dart';
-import 'package:slaski/presentation/homepage/bottomSheet.dart';
+import 'package:slaski/presentation/homepage/bottomsheet.dart';
 
 class SliverAppBarForDesktop extends StatefulWidget {
   const SliverAppBarForDesktop({super.key});
