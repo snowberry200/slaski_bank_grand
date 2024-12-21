@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:slaski/presentation/widget/history.dart';
-import '../widget/colummodule.dart';
 
 class PersonalAccountView extends StatefulWidget {
   const PersonalAccountView({super.key});
@@ -10,10 +9,17 @@ class PersonalAccountView extends StatefulWidget {
   State<PersonalAccountView> createState() => _PersonalAccountViewState();
 }
 
-class _PersonalAccountViewState extends State<PersonalAccountView>
-// with TickerProviderStateMixin
-{
-  late List<ColumnModule> histories;
+class _PersonalAccountViewState extends State<PersonalAccountView> {
+  //total sum of amount Deposited
+  num sumOfAmounts() {
+    num sum = 0;
+    for (int i = 0; i < histories.length; i++) {
+      sum += histories[i]['amount'];
+    }
+    return sum;
+  }
+
+  late List<Map<String, dynamic>> histories;
   bool isPlaying = false;
   @override
   void initState() {
@@ -34,7 +40,7 @@ class _PersonalAccountViewState extends State<PersonalAccountView>
                   width: double.infinity,
                   decoration: const BoxDecoration(
                       color: Color.fromARGB(255, 13, 74, 124)),
-                  child: const Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Center(
@@ -66,7 +72,7 @@ class _PersonalAccountViewState extends State<PersonalAccountView>
                                     style: TextStyle(color: Colors.green)),
                                 SizedBox(width: 5),
                                 Text(
-                                  '\u20AC 804,000.00',
+                                  "\u20AC ${sumOfAmounts().toString()}",
                                   style: TextStyle(
                                       letterSpacing: 1.5,
                                       wordSpacing: 1.5,
@@ -105,7 +111,6 @@ class _PersonalAccountViewState extends State<PersonalAccountView>
     final List<String> columns = ['Date', 'Credit', 'Amount'];
     return DataTable(
         decoration: BoxDecoration(
-         
             borderRadius: const BorderRadius.all(Radius.circular(0)),
             border: Border.all(
                 color: const Color.fromARGB(255, 223, 236, 235), width: 2)),
@@ -131,15 +136,17 @@ class _PersonalAccountViewState extends State<PersonalAccountView>
                     fontSize: 19,
                     fontStyle: FontStyle.italic)));
       }).toList();
-  List<DataRow> getRows(List<ColumnModule> histories) =>
-      histories.map((ColumnModule history) {
-        final List<dynamic> cells = [
-          history.date,
-          history.credit,
-          history.amount
+
+  List<DataRow> getRows(List<dynamic> histories) => histories.map((history) {
+        final List<dynamic> cells = <dynamic>[
+          history['date'].toString(),
+          history['credit'].toString(),
+          history['amount'].toString(),
         ];
+
         return DataRow(cells: getCells(cells));
       }).toList();
+
   List<DataCell> getCells(List<dynamic> cells) => cells.map((dynamic cell) {
         return DataCell(Text(
           cell,
