@@ -30,7 +30,7 @@ class _PersonalAccountViewState extends State<PersonalAccountView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.orange.withOpacity(0.6),
+        backgroundColor: Colors.orange.withValues(alpha: 0.6),
         body: Padding(
             padding: const EdgeInsets.only(top: 30.0, bottom: 0),
             child: Column(
@@ -47,6 +47,8 @@ class _PersonalAccountViewState extends State<PersonalAccountView> {
                         child: Padding(
                           padding: EdgeInsets.only(left: 20.0),
                           child: Text(
+                            textHeightBehavior: TextHeightBehavior(),
+                            softWrap: false,
                             'Current Account',
                             style: TextStyle(
                                 color: CupertinoColors.white, fontSize: 18),
@@ -123,19 +125,21 @@ class _PersonalAccountViewState extends State<PersonalAccountView> {
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.w500,
             color: Colors.black),
-        columns: getColumn(columns),
-        rows: getRows(histories));
+        columns: getColumn([...columns]),
+        rows: getRows([...histories]));
   }
 
-  List<DataColumn> getColumn(List<String> columns) => columns.map((column) {
-        return DataColumn(
-            label: Text(column,
-                style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.orange,
-                    fontSize: 19,
-                    fontStyle: FontStyle.italic)));
-      }).toList();
+  List<DataColumn> getColumn(List<String> columns) => [
+        ...columns.map((column) {
+          return DataColumn(
+              label: Text(column,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.orange,
+                      fontSize: 19,
+                      fontStyle: FontStyle.italic)));
+        })
+      ].toList();
 
   List<DataRow> getRows(List<dynamic> histories) => histories.map((history) {
         final List<dynamic> cells = <dynamic>[

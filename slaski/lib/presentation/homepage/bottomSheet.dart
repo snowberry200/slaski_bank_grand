@@ -49,7 +49,13 @@ class _BottomSheettState extends State<BottomSheett>
                 icon: const Icon(Icons.image),
                 tooltip: 'Gallery'),
           ],
-        )
+        ),
+        if (_image != null)
+          Image.file(
+            _image!,
+            height: 100,
+            width: 100,
+          )
       ]),
     );
   }

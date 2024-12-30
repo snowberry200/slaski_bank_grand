@@ -19,11 +19,9 @@ class _BackgroundImageWidgetState extends State<BackgroundImageWidget> {
             image: widget.image,
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
-                Colors.black.withOpacity(0.1), BlendMode.darken)),
+                Colors.black.withValues(alpha: 0.1), BlendMode.darken)),
       ),
       child: widget.child,
     );
   }
 }
-
-

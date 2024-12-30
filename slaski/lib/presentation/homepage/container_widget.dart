@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class IsmibilecontainerWidget extends StatelessWidget {
-  const IsmibilecontainerWidget({
+class IsmobileContainerWidget extends StatelessWidget {
+  const IsmobileContainerWidget({
     super.key,
     required this.keyi,
     required this.lock,

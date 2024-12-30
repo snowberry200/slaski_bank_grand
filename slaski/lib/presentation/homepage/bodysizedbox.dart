@@ -70,14 +70,14 @@ class _BodySizedBoxState extends State<BodySizedBox>
                     unselectedLabelColor: CupertinoColors.systemRed,
                     tabs: const [
                       Padding(
-                        padding: EdgeInsets.only(left:5.0,right:5),
+                        padding: EdgeInsets.only(left: 5.0, right: 5),
                         child: Tab(
                           text: 'PERSONAL',
                         ),
                       ),
                       // Tab(text: 'BUSINESS'),
                       Padding(
-                        padding: EdgeInsets.only(left:5.0,right:5),
+                        padding: EdgeInsets.only(left: 5.0, right: 5),
                         child: Tab(text: 'TREASURY'),
                       ),
                     ],
@@ -89,7 +89,7 @@ class _BodySizedBoxState extends State<BodySizedBox>
                 child: Container(
                     // height: 400,
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.4),
+                      color: Colors.white.withValues(alpha: 0.4),
                       borderRadius: const BorderRadius.only(
                           bottomLeft: Radius.circular(20),
                           bottomRight: Radius.circular(20)),

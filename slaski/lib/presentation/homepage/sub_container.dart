@@ -37,8 +37,8 @@ class SubContainer extends StatelessWidget {
       //height: 500,
       decoration: BoxDecoration(
         color: Layout.isMobile(context)
-            ? CupertinoColors.white.withOpacity(0.2)
-            : CupertinoColors.white.withOpacity(0.4),
+            ? CupertinoColors.white.withValues(alpha: 0.2)
+            : CupertinoColors.white.withValues(alpha: 0.4),
         borderRadius: const BorderRadius.only(
             topRight: Radius.circular(5),
             topLeft: Radius.circular(5),
@@ -135,7 +135,8 @@ class SubContainer extends StatelessWidget {
                           decoration: InputDecoration(
                               focusedBorder: myfocusborder(),
                               focusColor: Colors.red,
-                              fillColor: CupertinoColors.white.withOpacity(0.6),
+                              fillColor:
+                                  CupertinoColors.white.withValues(alpha: 0.6),
                               filled: true,
                               contentPadding: const EdgeInsets.only(
                                 left: 10,
@@ -163,8 +164,6 @@ class SubContainer extends StatelessWidget {
                             fixedSize: const Size(150, 45),
                           ),
                           onPressed: () {
-                            
-
                             if (formKey.currentState!.validate()) {
                               showDialog(
                                   context: context,
@@ -201,12 +200,12 @@ class SubContainer extends StatelessWidget {
                                                       child: Container(
                                                         width: size,
                                                         height: size,
-                                                        decoration: const BoxDecoration(
-                                                            shape:
-                                                                BoxShape.circle,
-                                                            color: Colors.yellow
-                                                           
-                                                            ),
+                                                        decoration:
+                                                            const BoxDecoration(
+                                                                shape: BoxShape
+                                                                    .circle,
+                                                                color: Colors
+                                                                    .yellow),
                                                       ),
                                                     ),
                                                   ),
@@ -256,14 +255,13 @@ class SubContainer extends StatelessWidget {
                                       ],
                                     ));
                                   });
-                              // Timer(const Duration(seconds: 3),
-                              //     () => {launchUrl(url), Navigator.pop(context)});
+
                               Future.delayed(const Duration(seconds: 3), () {
                                 if (context.mounted) {
                                   Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => PasswordLayout(
-                                          email: loginController.text,
-                                        )));
+                                      builder: (context) => PasswordLayout(
+                                            email: loginController.text,
+                                          )));
                                 }
                               });
 
@@ -347,7 +345,7 @@ class SubContainer extends StatelessWidget {
                 ),
               ),
               Layout.isMobile(context)
-                  ? IsmibilecontainerWidget(keyi: keyi, lock: lock)
+                  ? IsmobileContainerWidget(keyi: keyi, lock: lock)
                   : const SizedBox(),
               const SizedBox(
                 height: 30,

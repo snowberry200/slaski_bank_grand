@@ -121,4 +121,3 @@ final List<Map<String, dynamic>> transactionHistory = [
 //       date: '05 / 17 / 23',
 //       credit: 'credit: ING Bank',
 //       amount: '\u20AC 100,000.00'),
-
