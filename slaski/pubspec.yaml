@@ -1,0 +1,71 @@
+name: slaski
+description: A new Flutter project.
+
+# publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.4 <3.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  url_launcher: ^6.1.7
+  email_validator: ^3.0.0
+  firebase_auth: ^5.3.4
+  firebase_core: ^3.8.0
+  cloud_firestore: ^5.5.0
+  reading_time: ^2.0.0
+  slide_digital_clock: ^1.0.2
+  auto_size_text: ^3.0.0
+  image_picker: ^1.1.2
+  image_picker_for_web: ^3.0.6
+  intl: ^0.20.1
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+  flutter_lints: ^5.0.0
+
+
+flutter:
+
+ 
+  uses-material-design: true
+
+  assets:
+    - images/rose.jpeg
+    - images/cole.jpeg
+    - images/ing.png
+    - images/red.jpeg
+    - images/light.jpeg
+    - images/pine.jpeg
+    - images/santa.jpeg
+    - images/snow.jpeg
+    - images/candel.jpeg
+    - images/chair.jpeg
+    - images/claus.jpeg
+    - images/laura.jpeg
+    - images/violet.jpeg
+    - images/kofi.jpg
+    - images/round.png
+    - images/hy.jpeg
+    - images/py.jpeg
+    - images/tree.jpeg
+    - images/engine.jpeg
+    - images/des.jpeg
+    - images/dark.jpg
+    - images/stock.jpg
+    - images/stock.jpeg
+    - images/pink_white.jpg
+    - images/keyboard.jpg
+    - images/apple_keyboard.jpg
+    - images/pic flower.jpg
